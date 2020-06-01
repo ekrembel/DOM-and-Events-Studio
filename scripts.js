@@ -1,6 +1,11 @@
 // Write your JavaScript code here.
 // Remember to pay attention to page loading!
 let height = 0;
+let bottomPadding = 0;
+let topPadding = 0;
+let leftPadding = 0;
+let rightPadding = 0;
+
 function takeOff() {
     height += 10000;
     document.getElementById("flightStatus").innerHTML = "Shuttle in flight.";
@@ -10,22 +15,21 @@ function takeOff() {
 }
 
 function land() {
+    height = 0;
     document.getElementById("flightStatus").innerHTML = "Shuttle has landed.";
     document.querySelector("#shuttleBackground").style.backgroundColor = "green";
-    document.getElementById("spaceShuttleHeight").innerHTML = 0;
+    document.getElementById("spaceShuttleHeight").innerHTML = height;
     return confirm("The shuttle is landing. Landing gear engaged.");
 }
 
 function abort() {
+    height = 0;
     document.getElementById("flightStatus").innerHTML = "Mission aborted.";
     document.querySelector("#shuttleBackground").style.backgroundColor = "green";
-    document.getElementById("spaceShuttleHeight").innerHTML = 0;
+    document.getElementById("spaceShuttleHeight").innerHTML = height;
     return confirm("Confirm that you want to abort the mission.");
 }
-let bottomPadding = 0;
-let topPadding = 0;
-let leftPadding = 0;
-let rightPadding = 0;
+
 function up() {
     bottomPadding += 10;
     height += 10000;
